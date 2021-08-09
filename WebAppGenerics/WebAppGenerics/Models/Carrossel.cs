@@ -5,7 +5,10 @@ using System.Web;
 
 namespace WebAppGenerics.Models
 {
-    public class Carrossel
+    public class Carrossel : BaseModel
     {
+        public string Operador { get; set; }
+        public string Revisor { get; set; }
+        
     }
 }

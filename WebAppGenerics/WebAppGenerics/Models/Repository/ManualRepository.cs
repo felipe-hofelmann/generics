@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebAppGenerics.Models.Repository
 {
-    public class ManualRepository
+    public class ManualRepository : BaseRepository<Manual>
     {
     }
 }

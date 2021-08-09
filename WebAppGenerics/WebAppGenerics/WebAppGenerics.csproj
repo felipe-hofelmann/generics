@@ -168,15 +168,23 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Manual\Index.cshtml" />
+    <Content Include="Views\Manual\Create.cshtml" />
+    <Content Include="Views\Manual\List.cshtml" />
+    <Content Include="Views\Manual\Edit.cshtml" />
+    <Content Include="Views\Manual\Delete.cshtml" />
+    <Content Include="Views\Manual\Details.cshtml" />
+    <Content Include="Views\Carrossel\Index.cshtml" />
+    <Content Include="Views\Carrossel\Create.cshtml" />
+    <Content Include="Views\Carrossel\List.cshtml" />
+    <Content Include="Views\Carrossel\Edit.cshtml" />
+    <Content Include="Views\Carrossel\Delete.cshtml" />
+    <Content Include="Views\Carrossel\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Carrossel\" />
-    <Folder Include="Views\Manual\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

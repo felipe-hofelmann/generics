@@ -5,7 +5,9 @@ using System.Web;
 
 namespace WebAppGenerics.Models
 {
-    public class Manual
+    public class Manual : BaseModel
     {
+        public string Estampador { get; set; }
+        public string Auxiliar { get; set; }
     }
 }

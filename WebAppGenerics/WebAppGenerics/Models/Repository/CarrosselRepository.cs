@@ -5,7 +5,8 @@ using System.Web;
 
 namespace WebAppGenerics.Models.Repository
 {
-    public class CarrosselRepository
+    public class CarrosselRepository : BaseRepository<Carrossel>
     {
+
     }
 }

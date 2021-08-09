@@ -3,38 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebAppGenerics.Models;
+using WebAppGenerics.Models.Repository;
 
 namespace WebAppGenerics.Controllers
 {
-    public class BaseController : Controller
+    public class BaseController<M,R> : Controller where M : BaseModel where R : BaseRepository<M>
     {
-        // GET: Base
+        R repository;
+        public BaseController(R repository)
+        {
+            this.repository = repository;  
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Base/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+
+            return View(repository.Read(id));
         }
 
-        // GET: Base/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Base/Create
+        
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(M model)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                repository.Create(model);  
+                return RedirectToAction("Create");
             }
             catch
             {
@@ -42,21 +47,20 @@ namespace WebAppGenerics.Controllers
             }
         }
 
-        // GET: Base/Edit/5
+        
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(repository.Read(id));
         }
 
-        // POST: Base/Edit/5
+        
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(M model)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                repository.Update(model);
+                return RedirectToAction("List");
             }
             catch
             {
@@ -64,26 +68,31 @@ namespace WebAppGenerics.Controllers
             }
         }
 
-        // GET: Base/Delete/5
+        
         public ActionResult Delete(int id)
         {
-            return View();
+            
+            return View(repository.Read(id));
         }
 
-        // POST: Base/Delete/5
+        
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete( M model )
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                repository.Delete(model.Id);
+                return RedirectToAction("List");
             }
             catch
             {
                 return View();
             }
+        }
+
+        public ActionResult List() 
+        { 
+            return View(repository.Read());
         }
     }
 }
