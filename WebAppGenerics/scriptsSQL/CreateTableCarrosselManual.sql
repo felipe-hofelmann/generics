@@ -1,0 +1,14 @@
+﻿CREATE TABLE [Carrossel]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1)
+	,[Operador] VARCHAR(50) NOT NULL
+	,[Revisor] VARCHAR(50) NOT NULL
+	,[Producao] INT NOT NULL
+)
+CREATE TABLE [Manual]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1)
+	,[Estampador] VARCHAR(50) NOT NULL
+	,[Auxiliar] VARCHAR(50) NOT NULL
+	,[Producao] INT NOT NULL
+)
