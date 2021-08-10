@@ -6,15 +6,15 @@ using System.Web;
 
 namespace WebAppGenerics.Models.Repository
 {
-    public class ManualRepository : BaseRepository<Manual>
+    public class ManualRepository 
     {
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\GitHub-Projects\generics\WebAppGenerics\WebAppGenerics\App_Data\Estamparia.mdf;Integrated Security=True";
         public void Create(Manual model)
         {
             ExecNonQuery("INSERT INTO Manual" +
-                       "( Operador, Auxiliar, Producao) " +
+                       "( Estampador, Auxiliar, Producao) " +
                        $"Values ('{model.Estampador}'" +
-                       $",{model.Auxiliar}" +
+                       $",'{model.Auxiliar}'" +
                        $",'{model.Producao}')");
         }
 
@@ -76,7 +76,7 @@ namespace WebAppGenerics.Models.Repository
             ExecNonQuery("UPDATE Manual " +
                             "SET " +
                                 $"Estampador='{model.Estampador}'" +
-                                $",Auxiliar= {model.Auxiliar}" +
+                                $",Auxiliar= '{model.Auxiliar}'" +
                                 $", Producao='{model.Producao}'" +
                             $"WHERE Id = {model.Id}");
         }

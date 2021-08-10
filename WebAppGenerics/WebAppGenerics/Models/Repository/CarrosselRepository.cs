@@ -76,7 +76,7 @@ namespace WebAppGenerics.Models.Repository
             ExecNonQuery("UPDATE Carrossel " +
                             "SET " +
                                 $"Operador='{model.Operador}'" +
-                                $",Revisor= {model.Revisor}" +
+                                $",Revisor= '{model.Revisor}'" +
                                 $", Producao='{model.Producao}'" +
                             $"WHERE Id = {model.Id}");
         }
