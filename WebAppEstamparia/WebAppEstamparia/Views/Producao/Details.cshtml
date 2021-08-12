@@ -1,0 +1,66 @@
+﻿@model WebAppEstamparia.Models.Producao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Producao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Operador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Operador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Auxiliar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Auxiliar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "List")
+</p>
